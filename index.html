@@ -1,0 +1,55 @@
+import { motion } from "motion/react";
+import { ProjectCard } from "../components/ProjectCard";
+
+export function ToolsSupport() {
+  return (
+    <div className="w-full pt-24 pb-32">
+      <div className="max-w-7xl mx-auto px-6">
+        
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl mb-16"
+        >
+          <h1 className="font-serif text-5xl text-stone-900 mb-6">Educational Tools, Workshops & Faculty Support</h1>
+          <p className="text-xl text-stone-600 leading-relaxed">
+            I don't just design courses; I design the systems, supports, and resources around learning. This includes building toolkits, leading workshops, and creating microlearning materials that empower educators.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <ProjectCard 
+            title="Faculty Onboarding Toolkit"
+            category="Toolkit"
+            description="A comprehensive toolkit designed to streamline faculty onboarding and promote evidence-based teaching practices."
+            link="/tools-support/onboarding"
+            imageUrl="https://picsum.photos/seed/tools-1/800/600"
+          />
+          <ProjectCard 
+            title="AI in Education Workshops"
+            category="Workshop Design"
+            description="Interactive workshops helping educators understand, evaluate, and integrate AI tools into their pedagogy."
+            link="/tools-support/ai-workshops"
+            imageUrl="https://picsum.photos/seed/tools-2/800/600"
+          />
+          <ProjectCard 
+            title="Microlearning Support Materials"
+            category="Resource Design"
+            description="Bite-sized, just-in-time learning resources designed to help instructors master new educational technologies."
+            link="/tools-support/microlearning"
+            imageUrl="https://picsum.photos/seed/tools-3/800/600"
+          />
+          <ProjectCard 
+            title="Course Support Systems"
+            category="System Design"
+            description="Designing the backend processes and support structures necessary to run large-scale online courses smoothly."
+            link="/tools-support/systems"
+            imageUrl="https://picsum.photos/seed/tools-4/800/600"
+          />
+        </div>
+
+      </div>
+    </div>
+  );
+}

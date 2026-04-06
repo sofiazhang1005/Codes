@@ -1,0 +1,90 @@
+import { motion } from "motion/react";
+import { ArrowLeft } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+
+export function CaseStudy() {
+  const navigate = useNavigate();
+
+  return (
+    <div className="w-full pt-24 pb-32 bg-white">
+      <div className="max-w-4xl mx-auto px-6">
+        
+        <button 
+          onClick={() => navigate(-1)}
+          className="flex items-center text-stone-500 hover:text-stone-900 transition-colors mb-12 font-medium"
+        >
+          <ArrowLeft size={18} className="mr-2" />
+          Back to Projects
+        </button>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="mb-8">
+            <span className="inline-block px-3 py-1 bg-stone-100 text-stone-600 text-sm font-medium rounded-full mb-6">
+              Category / Tag
+            </span>
+            <h1 className="font-serif text-4xl md:text-5xl text-stone-900 mb-6 leading-tight">
+              Project Title Placeholder
+            </h1>
+            <p className="text-xl text-stone-600 leading-relaxed">
+              A brief, compelling summary of the project, the core challenge, and the ultimate impact. This should be 1-2 sentences that hook the reader.
+            </p>
+          </div>
+
+          <div className="aspect-[16/9] bg-stone-100 rounded-3xl overflow-hidden mb-16 shadow-sm">
+            <div className="w-full h-full flex items-center justify-center text-stone-400 font-medium">
+              Hero Image Placeholder
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16 border-b border-stone-200 pb-16">
+            <div className="md:col-span-1 space-y-8">
+              <div>
+                <h3 className="text-sm font-bold text-stone-900 uppercase tracking-wider mb-2">Role</h3>
+                <p className="text-stone-600">Lead Learning Designer</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-stone-900 uppercase tracking-wider mb-2">Timeline</h3>
+                <p className="text-stone-600">Fall 2025</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-stone-900 uppercase tracking-wider mb-2">Tools</h3>
+                <p className="text-stone-600">Canvas, Google AI Studio, Figma</p>
+              </div>
+            </div>
+            
+            <div className="md:col-span-3 prose prose-stone prose-lg max-w-none">
+              <h2 className="font-serif text-3xl text-stone-900">Context & Challenge</h2>
+              <p>
+                Describe the background of the project. What was the educational need? What problem were you trying to solve for students or faculty?
+              </p>
+
+              <h2 className="font-serif text-3xl text-stone-900 mt-12">Process & Pedagogical Decisions</h2>
+              <p>
+                Walk through your methodology. How did you approach the problem? What learning science principles or design frameworks guided your decisions?
+              </p>
+              
+              <div className="my-12 aspect-video bg-stone-100 rounded-2xl flex items-center justify-center text-stone-400 text-sm">
+                Process Artifact / Screenshot Placeholder
+              </div>
+
+              <h2 className="font-serif text-3xl text-stone-900 mt-12">Outcomes & Impact</h2>
+              <p>
+                What was the result? Share qualitative or quantitative data, faculty feedback, or student outcomes.
+              </p>
+
+              <h2 className="font-serif text-3xl text-stone-900 mt-12">Reflection</h2>
+              <p>
+                What did you learn from this project? How does it inform your broader practice as a learning designer?
+              </p>
+            </div>
+          </div>
+
+        </motion.div>
+      </div>
+    </div>
+  );
+}
